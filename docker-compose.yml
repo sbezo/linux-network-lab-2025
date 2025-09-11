@@ -1,0 +1,78 @@
+---
+networks:
+  lan1:
+    ipam:
+      config:
+        - subnet: 10.0.1.0/24
+  lan2:
+    ipam:
+      config:
+        - subnet: 10.0.2.0/24
+  wan:
+    ipam:
+      config:
+        - subnet: 192.168.0.0/24
+
+services:
+  # LAN1 host
+  l1:
+    build: frr
+    container_name: l1
+    networks:
+      lan1:
+        ipv4_address: 10.0.1.10
+    tty: true
+    privileged: true
+
+  # Router between LAN1 and WAN
+  l2:
+    build: frr
+    container_name: l2
+    volumes:
+      - ./certs/ca/ca.cert:/etc/ipsec.d/cacerts/ca.crt:ro
+      - ./certs/l2/l2.cert:/etc/ipsec.d/certs/l2.crt:ro
+      - ./certs/l2/l2.key:/etc/ipsec.d/private/l2.key:ro
+    networks:
+      lan1:
+        ipv4_address: 10.0.1.11
+      wan:
+        ipv4_address: 192.168.0.10
+    tty: true
+    privileged: true
+
+
+  # Router between LAN2 and WAN
+  l3:
+    build: frr
+    container_name: l3
+    volumes:
+      - ./certs/ca/ca.cert:/etc/ipsec.d/cacerts/ca.crt:ro
+      - ./certs/l3/l3.cert:/etc/ipsec.d/certs/l3.crt:ro
+      - ./certs/l3/l3.key:/etc/ipsec.d/private/l3.key:ro
+    networks:
+      lan2:
+        ipv4_address: 10.0.2.11
+      wan:
+        ipv4_address: 192.168.0.11
+    tty: true
+    privileged: true
+
+  # LAN2 host
+  l4:
+    build: frr
+    container_name: l4
+    networks:
+      lan2:
+        ipv4_address: 10.0.2.10
+    tty: true
+    privileged: true
+
+
+
+  #nornir:
+  #  build: nornir
+  #  container_name: nornir
+  #  volumes:
+  #    - /var/run/docker.sock:/var/run/docker.sock  # gives access to Docker
+  #    - ./nornir/lab:/opt/nornir/lab  # mounts the lab directory
+  #  tty: true
