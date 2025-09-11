@@ -5,6 +5,10 @@ The goal of this lab is to build, test and document IPSec with IKEv2, VTI, certs
 
 
 ## Clone repository:
+```
+git clone https://github.com/sbezo/linux-network-lab-2025.git
+cd linux-network-lab-2025
+```
 
 ## Prepare certificates:
 You can use existing certificates and skip this step, 

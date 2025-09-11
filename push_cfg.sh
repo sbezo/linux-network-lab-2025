@@ -8,7 +8,7 @@ for node in "${NODES[@]}"; do
   # Push Linux commands
   if [ -f configs/$node/linux_rsa.cfg ]; then
     echo ">>> Configuring linux for node: $node"
-    docker exec -i $node bash < configs/$node/linux.cfg
+    docker exec -i $node bash < configs/$node/linux_rsa.cfg
   fi
 
   # Push FRR (vtysh) commands

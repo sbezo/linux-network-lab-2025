@@ -67,12 +67,3 @@ services:
     tty: true
     privileged: true
 
-
-
-  #nornir:
-  #  build: nornir
-  #  container_name: nornir
-  #  volumes:
-  #    - /var/run/docker.sock:/var/run/docker.sock  # gives access to Docker
-  #    - ./nornir/lab:/opt/nornir/lab  # mounts the lab directory
-  #  tty: true
