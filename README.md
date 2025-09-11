@@ -1,5 +1,9 @@
 The goal of this lab is to build, test and document IPSec with IKEv2, VTI, certs and BGP.
 
+## Lab topology
+<img width="902" height="258" alt="image" src="https://github.com/user-attachments/assets/55b04537-f1e1-4d1c-90e9-0135d8e0fa56" />
+
+
 ## Clone repository:
 
 ## Prepare certificates:
