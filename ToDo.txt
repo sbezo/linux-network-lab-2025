@@ -1,0 +1,4 @@
+- [ ] namapovat konfiguraciu IPSec, aby som ju nemusel po kazdej zmene pushovat a aby stacilo restartovat ipsec sluzbu.
+- [ ] Driesit RSA autentifikaciu s certifikatmi
+- [ ] Driesit BGP cez IPSec
+- [ ] Rozbehnut OSPF na LAN1 a LAN2
