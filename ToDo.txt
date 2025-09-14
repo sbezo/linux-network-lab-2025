@@ -1,4 +1,5 @@
-- [ ] namapovat konfiguraciu IPSec, aby som ju nemusel po kazdej zmene pushovat a aby stacilo restartovat ipsec sluzbu.
+- [ ] certs -> nss
+    https://libreswan.org/wiki/HOWTO:_Using_NSS_with_libreswan
 - [ ] Driesit RSA autentifikaciu s certifikatmi
 - [ ] Driesit BGP cez IPSec
 - [ ] Rozbehnut OSPF na LAN1 a LAN2

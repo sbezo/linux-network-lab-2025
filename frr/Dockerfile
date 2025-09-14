@@ -7,6 +7,7 @@ RUN apt-get update && \
     frr frr-pythontools \
     libreswan \
     systemctl \
+    libnss3-tools \
     vim nano && \
     rm -rf /var/lib/apt/lists/*
 

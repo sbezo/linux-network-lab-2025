@@ -29,9 +29,8 @@ services:
     build: frr
     container_name: l2
     volumes:
-      - ./certs/ca/ca.cert:/etc/ipsec.d/cacerts/ca.crt:ro
-      - ./certs/l2/l2.cert:/etc/ipsec.d/certs/l2.crt:ro
-      - ./certs/l2/l2.key:/etc/ipsec.d/private/l2.key:ro
+      - ./certs/ca/ca.crt:/etc/ipsec.d/cacerts/ca.crt
+      - ./certs/l2/l2.p12:/etc/ipsec.d/certs/l2.p12
     networks:
       lan1:
         ipv4_address: 10.0.1.11
@@ -46,9 +45,8 @@ services:
     build: frr
     container_name: l3
     volumes:
-      - ./certs/ca/ca.cert:/etc/ipsec.d/cacerts/ca.crt:ro
-      - ./certs/l3/l3.cert:/etc/ipsec.d/certs/l3.crt:ro
-      - ./certs/l3/l3.key:/etc/ipsec.d/private/l3.key:ro
+      - ./certs/ca/ca.crt:/etc/ipsec.d/cacerts/ca.crt
+      - ./certs/l3/l3.p12:/etc/ipsec.d/certs/l3.p12
     networks:
       lan2:
         ipv4_address: 10.0.2.11

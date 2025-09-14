@@ -15,8 +15,8 @@ cd linux-network-lab-2025
 ```
 
 ## Prepare certificates:
-You can use existing certificates and skip this step, 
-or create your own new certificates by:
+Create your own new certificates.   
+You need to run this just once.
 
 ```
 rm -rf ./certs
@@ -35,8 +35,8 @@ docker compose up -d --build
 
 ## Push config to devices:
 ```
-chmod +x ./push_cfg.sh
-./push_cfg.sh
+chmod +x ./push_cfg_rsa.sh
+./push_cfg_rsa.sh
 ```
 
 ## Check IPSec
@@ -58,4 +58,24 @@ and run:
 ```
 ping 172.16.0.11
 ```
+
+# Reference commands.  
+
+### IPSec debug
+ipsec pluto --stderrlog --nofork
+ipsec status
+ipsec stop
+ipsec start
+
+### adding certificates to NSS
+ipsec initnss
+pk12util -i /etc/ipsec.d/certs/l2.p12 -d sql:/var/lib/ipsec/nss -K "" -W ""
+certutil -A -n "LabRootCA" -t "CT,C,C" -d sql:/var/lib/ipsec/nss -i /etc/ipsec.d/cacerts/ca.crt
+certutil -L -d sql:/var/lib/ipsec/nss
+
+
+# check csr
+openssl req -in certs/l2/l2.csr -text
+# check crt
+openssl x509 -in certs/l2/l2.crt -text
 
