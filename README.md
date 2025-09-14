@@ -60,7 +60,7 @@ and run:
 ping 172.16.0.11
 ```
 
-# Reference commands.  
+# Useful commands.  
 
 ### IPSec debug
 ```

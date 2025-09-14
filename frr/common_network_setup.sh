@@ -6,7 +6,7 @@ echo "Starting container setup..."
 # Modify /etc/frr/daemons for common configuration
 cat <<EOL >/etc/frr/daemons
 zebra=yes
-bgpd=no
+bgpd=yes
 ospfd=yes
 vtysh_enable=yes
 EOL
