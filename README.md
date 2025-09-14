@@ -54,6 +54,8 @@ and ping interface of l4 router
 ```
 ping 10.0.2.10
 ```
+Wait up to 30 seconds while IPSec, BGP and OSPF bring fully up.
+
 ---------------------------
 ---------------------------
 ---------------------------
@@ -61,12 +63,12 @@ ping 10.0.2.10
 
 # Useful commands.  
 
-### Jumping to linux
+## Jumping to linux
 
 ```
 docker exec -it l1 bash
 ```
-### IPSec troubleshooting (under linux shell)
+## IPSec troubleshooting (under linux shell)
 ```
 ipsec status
 ipsec traffic
@@ -77,7 +79,7 @@ ipsec start
 ipsec pluto --stderrlog --nofork
 ```
 
-### adding certificates to NSS
+## adding certificates to NSS
 ```
 # init nss:
 ipsec initnss
@@ -92,11 +94,11 @@ certutil -A -n "LabRootCA" -t "CT,C,C" -d sql:/var/lib/ipsec/nss -i /etc/ipsec.d
 certutil -L -d sql:/var/lib/ipsec/nss
 ```
 
-### check csr
+## check csr
 ```
 openssl req -in certs/l2/l2.csr -text
 ```
-### check crt
+## check crt
 ```
 openssl x509 -in certs/l2/l2.crt -text
 ```
