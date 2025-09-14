@@ -40,6 +40,22 @@ chmod +x ./push_cfg_rsa.sh
 ./push_cfg_rsa.sh
 ```
 
+## Check End to end connectivity
+Jump to l1 router
+```
+docker exec -it l1 bash
+```
+Then jump to vtysh (Cisco-like CLI):
+```
+vtysh
+```
+
+and ping interface of l4 router
+```
+ping 10.0.2.10
+```
+---------------------------
+
 ## Check IPSec
 
 Jump to l2 router
@@ -51,14 +67,19 @@ and run:
 ipsec status
 ipsec traffic
 ```
-Then jump to vtysh (Cisco-like CLI):
+
 ```
 vtysh
 ```
-and run:
+and ping peer's vti IP
 ```
 ping 172.16.0.11
 ```
+## Check IPSec
+
+
+
+
 
 # Useful commands.  
 

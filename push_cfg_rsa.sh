@@ -1,6 +1,6 @@
 #!/bin/bash
 
-NODES=("l2" "l3")
+NODES=("l1" "l2" "l3" "l4")
 
 for node in "${NODES[@]}"; do
   echo ">>> Configuring $node"
