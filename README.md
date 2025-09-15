@@ -1,5 +1,5 @@
-The goal of this lab is to build, test and document IPSec with IKEv2, VTI, RSA and BGP on FRR + LibreSwan.
-You can get fully functional lab in 4 easy copy-paste steps and can start play.  
+The goal of this lab is to build, test and document IPSec with IKEv2, VTI, RSA and BGP on FRR + LibreSwan.  
+You can get fully functional lab in 4 easy copy-paste steps and you can start play.  
 The only prerequisite is docker.  
 
 
@@ -38,7 +38,7 @@ chmod +x ./push_cfg_rsa.sh
 ./push_cfg_rsa.sh
 ```
 
-## Check End to end connectivity
+## Check end-to-end connectivity
 Jump to l1 router vtysh
 ```
 docker exec -it l1 vtysh
