@@ -4,7 +4,8 @@ The only prerequisite is docker.
 
 
 ## Lab topology
-<img width="841" height="204" alt="image" src="https://github.com/user-attachments/assets/49fd5ef0-7cd3-43b9-84be-2b142503ba91" />
+<img width="836" height="178" alt="image" src="https://github.com/user-attachments/assets/d5f76f54-26be-4475-b720-cccd94309f4f" />
+
 
 
 
