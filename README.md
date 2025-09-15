@@ -1,21 +1,19 @@
-🚧🚧🚧 Under construction, not ready yet! 🚧🚧🚧
+The goal of this lab is to build, test and document IPSec with IKEv2, VTI, RSA and BGP on FRR + LibreSwan.
+You can get fully functional lab in 4 easy copy-paste steps and can start play.  
+The only prerequisite is docker.  
 
-
-
-The goal of this lab is to build, test and document IPSec with IKEv2, VTI, certs and BGP on FRR + LibreSwan.
-Whole LAB is reproducible in docker. You can just follows instructions.   
 
 ## Lab topology
 <img width="902" height="258" alt="image" src="https://github.com/user-attachments/assets/55b04537-f1e1-4d1c-90e9-0135d8e0fa56" />
 
 
-## Clone repository:
+## 1. Clone repository:
 ```
 git clone https://github.com/sbezo/linux-network-lab-2025.git
 cd linux-network-lab-2025
 ```
 
-## Prepare certificates:
+## 2. Prepare certificates:
 Create your own new certificates.   
 You need to run this just once.
 
@@ -29,32 +27,27 @@ docker run --rm -it -v "$PWD":/root alpine sh  /root/create_certs.sh
 cd ..
 ```
 
-## Spin up LAB:
+## 3. Spin up LAB:
 ```
 docker compose up -d --build
 ```
 
-## Push config to devices:
+## 4. Push config to devices:
 ```
 chmod +x ./push_cfg_rsa.sh
 ./push_cfg_rsa.sh
 ```
 
 ## Check End to end connectivity
-Jump to l1 router
+Jump to l1 router vtysh
 ```
-docker exec -it l1 bash
+docker exec -it l1 vtysh
 ```
-Then jump to vtysh (Cisco-like CLI):
-```
-vtysh
-```
-
 and ping interface of l4 router
 ```
 ping 10.0.2.10
 ```
-Wait up to 30 seconds while IPSec, BGP and OSPF bring fully up.
+Wait up to 30 seconds while IPSec, BGP and OSPF will bring fully up.
 
 ---------------------------
 ---------------------------
@@ -64,9 +57,8 @@ Wait up to 30 seconds while IPSec, BGP and OSPF bring fully up.
 # Useful commands.  
 
 ## Jumping to linux
-
 ```
-docker exec -it l1 bash
+docker exec -it l2 bash
 ```
 ## IPSec troubleshooting (under linux shell)
 ```
@@ -105,7 +97,7 @@ openssl x509 -in certs/l2/l2.crt -text
 
 ## Jumping to VRR
 ```
-docker exec -it l1 vtysh
+docker exec -it l2 vtysh
 ```
 Or from linux just:
 ```
