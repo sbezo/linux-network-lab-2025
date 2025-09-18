@@ -97,7 +97,7 @@ openssl req -in certs/l2/l2.csr -text
 openssl x509 -in certs/l2/l2.crt -text
 ```
 
-## Jumping to VRR
+## Jumping to FRR
 ```
 docker exec -it l2 vtysh
 ```
@@ -105,7 +105,7 @@ Or from linux just:
 ```
 vtysh
 ```
-## few useful vrr commands
+## few useful FRR commands
 ```
 show run
 show interface brief
