@@ -1,4 +1,10 @@
 #!/bin/bash
+
+# This script is called by the Dockerfile to set up common network configurations
+# and start the FRR service in a container.
+# There should be common setups for all containers baked to image here.
+
+
 set -e
 
 echo "Starting container setup..."

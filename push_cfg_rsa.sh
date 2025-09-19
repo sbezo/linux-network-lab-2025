@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# This is the main script to push configuration files to the nodes
+# It calls linux and frr configuration files for each node
+# Configurations are organizen in the configs directory
+# Each node has its own directory with linux and frr configuration files
+
 NODES=("l1" "l2" "l3" "l4")
 
 for node in "${NODES[@]}"; do

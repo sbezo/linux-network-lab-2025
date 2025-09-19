@@ -6,7 +6,7 @@ The only prerequisite is docker.
 ## Lab topology
 <img width="836" height="178" alt="image" src="https://github.com/user-attachments/assets/d5f76f54-26be-4475-b720-cccd94309f4f" />
 
-
+> My lab notes you can find [here](https://sbezo.github.io/posts/ipsec_on_linux/)
 
 
 ## 1. Clone repository:

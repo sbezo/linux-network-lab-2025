@@ -1,4 +1,7 @@
-# paste inside alpine container:
+#!/bin/bash
+
+# This is a hell script for creating CA, router certificates and pkcs12 files for l2 and l3
+# Use it according to README.md - script is supposed to run inside alpine container
 
 # install openssl
 apk update && apk add openssl
